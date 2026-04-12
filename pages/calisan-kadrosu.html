@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Uçak Yazılım Endüstrileri | Çalışan Kadrosu</title>
+  <link rel="stylesheet" href="../assets/css/style.css" />
+</head>
+<body>
+  <div class="page-bg"></div>
+
+  <header class="header">
+    <div class="container nav-container">
+      <a href="../index.html" class="logo">
+        <div class="logo-emblem">
+          <span class="ring ring-1"></span>
+          <span class="ring ring-2"></span>
+          <span class="core">U</span>
+        </div>
+
+        <div class="logo-text">
+          <span class="logo-title">UÇAK YAZILIM</span>
+          <span class="logo-subtitle">ENDÜSTRİLERİ</span>
+        </div>
+      </a>
+
+      <nav class="nav" id="navMenu">
+        <a href="../index.html">Anasayfa</a>
+        <a href="hakkinda.html">Hakkında</a>
+        <a href="calisan-kadrosu.html" class="active">Çalışan Kadrosu</a>
+        <a href="projeler.html">Projeler</a>
+        <a href="urunler.html">Ürünler</a>
+        <a href="hizmetler.html">Hizmetler</a>
+        <a href="iletisim.html">İletişim</a>
+      </nav>
+
+      <button class="menu-toggle" id="menuToggle">☰</button>
+    </div>
+  </header>
+
+  <main class="page-top">
+    <section class="page-hero small-hero">
+      <div class="container">
+        <p class="eyebrow">Yönetim ve İdari Kadro</p>
+        <h1>Çalışan Kadrosu</h1>
+        <p>İdari kadro detaylarını görmek için kartlara tıklayın.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="employee-grid">
+          <div class="employee-card card" data-id="1">
+            <img src="../assets/images/employees/emp1.png" alt="Mete Hanoğlu" />
+            <h3>Mete Hanoğlu</h3>
+            <p>Genel Müdür</p>
+          </div>
+
+          <div class="employee-card card" data-id="2">
+            <img src="../assets/images/employees/emp2.png" alt="Timur Çelik" />
+            <h3>Timur Çelik</h3>
+            <p>Genel Müdür Yardımcısı</p>
+          </div>
+
+          <div class="employee-card card" data-id="3">
+            <img src="../assets/images/employees/emp3.png" alt="Pelin Kaya" />
+            <h3>Pelin Kaya</h3>
+            <p>Operasyon Direktörü</p>
+          </div>
+
+          <div class="employee-card card" data-id="4">
+            <img src="../assets/images/employees/emp4.png" alt="Mehmet Tokgöz" />
+            <h3>Mehmet Tokgöz</h3>
+            <p>Yazılım Geliştirme Direktörü</p>
+          </div>
+
+          <div class="employee-card card" data-id="5">
+            <img src="../assets/images/employees/emp5.png" alt="Serkan Yılmaz" />
+            <h3>Serkan Yılmaz</h3>
+            <p>Proje Koordinatörü</p>
+          </div>
+
+          <div class="employee-card card" data-id="6">
+            <img src="../assets/images/employees/emp6.png" alt="Pınar Karasu" />
+            <h3>Pınar Karasu</h3>
+            <p>İnsan Kaynakları Müdürü</p>
+          </div>
+
+          <div class="employee-card card" data-id="7">
+            <img src="../assets/images/employees/emp7.png" alt="Kıvanç Yaman" />
+            <h3>Kıvanç Yaman</h3>
+            <p>Finans Müdürü</p>
+          </div>
+
+          <div class="employee-card card" data-id="8">
+            <img src="../assets/images/employees/emp8.png" alt="Kenan Yaman" />
+            <h3>Kenan Yaman</h3>
+            <p>Satış ve Pazarlama Müdürü</p>
+          </div>
+
+          <div class="employee-card card" data-id="9">
+            <img src="../assets/images/employees/emp9.png" alt="Mustafa Demir" />
+            <h3>Mustafa Demir</h3>
+            <p>Teknik Destek Müdürü</p>
+          </div>
+
+          <div class="employee-card card" data-id="10">
+            <img src="../assets/images/employees/emp10.png" alt="Işıl Hanoğlu" />
+            <h3>Işıl Hanoğlu</h3>
+            <p>Kurumsal İletişim Sorumlusu</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div class="modal" id="employeeModal">
+    <div class="modal-overlay" id="modalOverlay"></div>
+    <div class="modal-content card">
+      <button class="modal-close" id="modalClose">&times;</button>
+      <div id="modalBody"></div>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div>
+        <h3>Uçak Yazılım Endüstrileri</h3>
+        <p>Yenilikçi yazılım, endüstriyel otomasyon ve kurumsal teknoloji çözümleri.</p>
+      </div>
+      <div>
+        <h4>Hızlı Menü</h4>
+        <ul>
+          <li><a href="hakkinda.html">Hakkında</a></li>
+          <li><a href="projeler.html">Projeler</a></li>
+          <li><a href="urunler.html">Ürünler</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>İletişim</h4>
+        <p>info@ucakyazilim.com</p>
+        <p>+90 555 000 00 00</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../assets/js/main.js"></script>
+  <script src="../assets/js/employees.js"></script>
+</body>
+</html>
