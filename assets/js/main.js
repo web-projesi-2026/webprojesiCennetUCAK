@@ -6,11 +6,22 @@ if (menuToggle && navMenu) {
     navMenu.classList.toggle("show");
   });
 }
-const aiInput = document.getElementById("aiInput");
-const aiSendBtn = document.getElementById("aiSendBtn");
-const aiMessages = document.getElementById("aiMessages");
+const menuToggle = document.getElementById("menuToggle");
+const navMenu = document.getElementById("navMenu");
 
-if (aiInput && aiSendBtn && aiMessages) {
+if (menuToggle && navMenu) {
+  menuToggle.addEventListener("click", () => {
+    navMenu.classList.toggle("show");
+  });
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+  const aiInput = document.getElementById("aiInput");
+  const aiSendBtn = document.getElementById("aiSendBtn");
+  const aiMessages = document.getElementById("aiMessages");
+
+  if (!aiInput || !aiSendBtn || !aiMessages) return;
+
   const getBotReply = (message) => {
     const text = message.toLowerCase();
 
@@ -18,7 +29,7 @@ if (aiInput && aiSendBtn && aiMessages) {
       return "Uçak Yazılım Endüstrileri; özel yazılım geliştirme, sistem entegrasyonu, veri raporlama, bakım ve teknik destek hizmetleri sunmaktadır.";
     }
 
-    if (text.includes("ürün")) {
+    if (text.includes("ürün") || text.includes("urun")) {
       return "Ürünlerimiz arasında Endüstri ERP Suite, Bakım Takip Pro ve Üretim Analiz Dashboard gibi kurumsal çözümler bulunmaktadır.";
     }
 
@@ -32,6 +43,10 @@ if (aiInput && aiSendBtn && aiMessages) {
 
     if (text.includes("çalışan") || text.includes("calisan") || text.includes("kadro")) {
       return "Çalışan kadrosu sayfasında yönetim ve idari personel bilgilerini detaylı olarak inceleyebilirsiniz.";
+    }
+
+    if (text.includes("fiyat") || text.includes("teklif")) {
+      return "Ürün ve hizmetlerimiz için fiyatlandırma detayları teklif doğrultusunda paylaşılmaktadır. İletişim sayfasından bizimle iletişime geçebilirsiniz.";
     }
 
     return "Sorunuz alınmıştır. Uçak Yazılım Endüstrileri; ürünler, hizmetler, projeler ve kurumsal çözümler konusunda bilgi sunmaktadır.";
@@ -55,7 +70,7 @@ if (aiInput && aiSendBtn && aiMessages) {
     setTimeout(() => {
       const reply = getBotReply(userText);
       addMessage(reply, "bot");
-    }, 500);
+    }, 450);
   };
 
   aiSendBtn.addEventListener("click", sendMessage);
@@ -65,4 +80,4 @@ if (aiInput && aiSendBtn && aiMessages) {
       sendMessage();
     }
   });
-}
+});
