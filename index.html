@@ -34,7 +34,10 @@
         <a href="pages/iletisim.html">İletişim</a>
       </nav>
 
-      <button class="menu-toggle" id="menuToggle">☰</button>
+      <div class="header-tools">
+        <button class="theme-toggle" id="themeToggle" aria-label="Tema değiştir">☀</button>
+        <button class="menu-toggle" id="menuToggle" aria-label="Menüyü aç">☰</button>
+      </div>
     </div>
   </header>
 
@@ -64,11 +67,11 @@
 
           <div class="hero-mini-stats">
             <div>
-              <strong>25+</strong>
+              <strong class="counter" data-target="25" data-suffix="+">0</strong>
               <span>Stratejik Proje</span>
             </div>
             <div>
-              <strong>10</strong>
+              <strong class="counter" data-target="10">0</strong>
               <span>İdari Yönetici</span>
             </div>
             <div>
@@ -111,23 +114,56 @@
       </div>
     </section>
 
+
+    <section class="section custom-slider-section">
+      <div class="container">
+        <div class="section-head">
+          <p class="eyebrow">Öne Çıkan Çözümler</p>
+          <h2>Dinamik Çözüm Sunumu</h2>
+        </div>
+
+        <div class="custom-slider card" id="solutionSlider">
+          <button class="slider-btn slider-prev" type="button" aria-label="Önceki slide">&#10094;</button>
+          <div class="slider-track">
+            <div class="slide active">
+              <span class="slide-tag">Akıllı Üretim</span>
+              <h3>Akıllı Üretim Yönetim Platformu</h3>
+              <p>Üretim hatlarını anlık izleyen, performans raporlarını tek panelde toplayan ve yönetim süreçlerini hızlandıran çözüm.</p>
+            </div>
+            <div class="slide">
+              <span class="slide-tag">Kurumsal Bakım</span>
+              <h3>Kurumsal Bakım Takip Yazılımı</h3>
+              <p>Bakım planlama, arıza geçmişi ve ekip yönlendirme süreçlerini tek merkezden kontrol etmenizi sağlar.</p>
+            </div>
+            <div class="slide">
+              <span class="slide-tag">Lojistik</span>
+              <h3>Lojistik Kontrol Paneli</h3>
+              <p>Depo, sevkiyat ve tedarik verilerini görsel olarak sunarak operasyonel kararları hızlandırır.</p>
+            </div>
+          </div>
+          <button class="slider-btn slider-next" type="button" aria-label="Sonraki slide">&#10095;</button>
+          <div class="slider-dots" aria-label="Slide göstergeleri"></div>
+        </div>
+      </div>
+    </section>
+
     <section class="stats">
       <div class="container stats-grid">
         <div class="stat-box card">
           <span class="stat-line"></span>
-          <h3>25+</h3>
+          <h3 class="counter" data-target="25" data-suffix="+">0</h3>
           <p>Tamamlanan Stratejik Proje</p>
         </div>
 
         <div class="stat-box card">
           <span class="stat-line"></span>
-          <h3>10</h3>
+          <h3 class="counter" data-target="10">0</h3>
           <p>İdari Yönetici Kadrosu</p>
         </div>
 
         <div class="stat-box card">
           <span class="stat-line"></span>
-          <h3>40+</h3>
+          <h3 class="counter" data-target="40" data-suffix="+">0</h3>
           <p>Kurumsal Çözüm Modülü</p>
         </div>
 
@@ -188,27 +224,30 @@
         </div>
 
         <div class="project-grid">
-          <div class="project-card card">
+          <div class="project-card card detail-source" data-detail-title="Akıllı Üretim Takip Sistemi" data-detail-subtitle="Üretim izleme ve kalite optimizasyonu" data-detail-text="Üretim verilerini anlık izleyen, raporlayan ve kalite süreçlerini optimize eden sistem. Fabrika yöneticileri için canlı durum takibi ve detaylı performans analizi sağlar.">
             <img src="assets/images/project/project1.png" alt="Akıllı Üretim Takip Sistemi" />
             <div class="project-content">
               <h3>Akıllı Üretim Takip Sistemi</h3>
               <p>Üretim verilerini anlık izleyen, raporlayan ve kalite süreçlerini optimize eden sistem.</p>
+              <button class="btn btn-secondary open-detail-btn" type="button">Detay Gör</button>
             </div>
           </div>
 
-          <div class="project-card card">
+          <div class="project-card card detail-source" data-detail-title="Kurumsal Kaynak Yönetimi" data-detail-subtitle="Merkezi yönetim paneli" data-detail-text="Finans, insan kaynakları ve operasyon akışlarını tek panelde yöneten yapı. Kurumsal veri akışını tek merkezde toplar ve yöneticilere sade bir kontrol alanı sunar.">
             <img src="assets/images/project/project2.png" alt="Kurumsal Kaynak Yönetimi" />
             <div class="project-content">
               <h3>Kurumsal Kaynak Yönetimi</h3>
               <p>Finans, insan kaynakları ve operasyon akışlarını tek panelde yöneten yapı.</p>
+              <button class="btn btn-secondary open-detail-btn" type="button">Detay Gör</button>
             </div>
           </div>
 
-          <div class="project-card card">
+          <div class="project-card card detail-source" data-detail-title="Teknik Servis Otomasyonu" data-detail-subtitle="Saha ekip yönetimi" data-detail-text="Arıza kaydı, ekip yönlendirme ve bakım süreçlerini dijitalleştiren platform. Teknik destek süreçlerini hızlandırır ve geçmiş kayıtları kolayca raporlar.">
             <img src="assets/images/project/project3.png" alt="Teknik Servis Otomasyonu" />
             <div class="project-content">
               <h3>Teknik Servis Otomasyonu</h3>
               <p>Arıza kaydı, ekip yönlendirme ve bakım süreçlerini dijitalleştiren platform.</p>
+              <button class="btn btn-secondary open-detail-btn" type="button">Detay Gör</button>
             </div>
           </div>
         </div>
@@ -227,6 +266,14 @@
       </div>
     </section>
   </main>
+
+  <div class="modal" id="genericDetailModal">
+    <div class="modal-overlay" data-close-modal></div>
+    <div class="modal-content card detail-modal-content">
+      <button class="modal-close" data-close-modal>&times;</button>
+      <div id="genericModalBody"></div>
+    </div>
+  </div>
 
   <footer class="footer">
     <div class="container footer-grid">
@@ -253,6 +300,8 @@
       </div>
     </div>
   </footer>
+
+  <button id="topBtn" class="top-btn" aria-label="Yukarı çık">↑</button>
 
   <script src="assets/js/main.js"></script>
 </body>
