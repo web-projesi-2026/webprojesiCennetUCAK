@@ -919,3 +919,327 @@ main .project-card img,
 main .product-card img {
   filter: none;
 }
+
+
+.header-tools {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.theme-toggle {
+  width: 46px;
+  height: 46px;
+  border-radius: 14px;
+  border: 1px solid rgba(255,255,255,0.12);
+  background: rgba(255,255,255,0.04);
+  color: white;
+  cursor: pointer;
+  font-size: 1.1rem;
+  transition: var(--transition);
+}
+
+.theme-toggle:hover,
+.top-btn:hover,
+.open-detail-btn:hover {
+  transform: translateY(-2px);
+}
+
+.top-btn {
+  position: fixed;
+  right: 22px;
+  bottom: 22px;
+  width: 52px;
+  height: 52px;
+  border: none;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #ff2948, #8c0016);
+  color: white;
+  font-size: 1.3rem;
+  cursor: pointer;
+  box-shadow: 0 10px 24px rgba(0,0,0,0.35);
+  opacity: 0;
+  visibility: hidden;
+  transition: var(--transition);
+  z-index: 1200;
+}
+
+.top-btn.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+.custom-slider {
+  position: relative;
+  padding: 32px 80px;
+  overflow: hidden;
+}
+
+.slider-track {
+  min-height: 220px;
+  position: relative;
+}
+
+.slide {
+  display: none;
+  animation: fadeSlide 0.45s ease;
+}
+
+.slide.active {
+  display: block;
+}
+
+.slide-tag {
+  display: inline-block;
+  padding: 8px 14px;
+  border-radius: 999px;
+  background: rgba(255,0,51,0.08);
+  border: 1px solid rgba(255,0,51,0.22);
+  color: var(--accent);
+  font-weight: 700;
+  margin-bottom: 14px;
+}
+
+.slide h3 {
+  font-size: 2rem;
+  margin-bottom: 12px;
+}
+
+.slide p {
+  max-width: 760px;
+  color: var(--text-soft);
+}
+
+.slider-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: 1px solid rgba(255,255,255,0.1);
+  background: rgba(255,255,255,0.04);
+  color: var(--text-main);
+  cursor: pointer;
+  font-size: 1.25rem;
+}
+
+.slider-prev { left: 18px; }
+.slider-next { right: 18px; }
+
+.slider-dots {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 12px;
+}
+
+.slider-dots button {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(255,255,255,0.22);
+  cursor: pointer;
+}
+
+.slider-dots button.active {
+  background: var(--accent);
+  box-shadow: 0 0 12px rgba(255,0,51,0.3);
+}
+
+.tabs {
+  padding: 28px;
+}
+
+.tab-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.tab-btn {
+  padding: 12px 18px;
+  border-radius: 14px;
+  border: 1px solid rgba(255,255,255,0.1);
+  background: rgba(255,255,255,0.03);
+  color: var(--text-main);
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.tab-btn.active {
+  background: rgba(255,0,51,0.10);
+  border-color: rgba(255,0,51,0.28);
+  color: #fff;
+}
+
+.tab-panel {
+  display: none;
+  color: var(--text-soft);
+}
+
+.tab-panel.active {
+  display: block;
+}
+
+.tab-panel h3 {
+  color: var(--text-main);
+  margin-bottom: 10px;
+}
+
+.open-detail-btn {
+  margin-top: 16px;
+}
+
+.detail-modal-content {
+  max-width: 760px;
+}
+
+.detail-subtitle {
+  color: var(--accent);
+  font-weight: 700;
+  margin: 8px 0 14px;
+}
+
+.light-mode {
+  --bg-main: #f4f4f6;
+  --bg-soft: #ececf0;
+  --bg-panel: rgba(255,255,255,0.88);
+  --bg-card: rgba(255,255,255,0.9);
+  --border: rgba(15,23,42,0.10);
+  --border-red: rgba(255, 0, 51, 0.20);
+  --text-main: #141414;
+  --text-soft: #4d4d57;
+  --text-faint: #777785;
+  --white-soft: #161616;
+}
+
+body.light-mode {
+  background:
+    radial-gradient(circle at 15% 20%, rgba(255, 0, 51, 0.05), transparent 22%),
+    radial-gradient(circle at 85% 10%, rgba(0, 0, 0, 0.04), transparent 18%),
+    linear-gradient(180deg, #fafafa 0%, #ededf0 48%, #f6f6f7 100%);
+}
+
+body.light-mode::before {
+  background:
+    linear-gradient(rgba(0,0,0,0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0,0,0,0.04) 1px, transparent 1px);
+  opacity: 0.2;
+}
+
+body.light-mode::after {
+  background: radial-gradient(circle at center, transparent 55%, rgba(255,255,255,0.15) 100%);
+}
+
+body.light-mode .header,
+body.light-mode .footer,
+body.light-mode .nav,
+body.light-mode .card,
+body.light-mode .cta-box,
+body.light-mode .tabs,
+body.light-mode .modal-content,
+body.light-mode .hero-panel-inner,
+body.light-mode .info-box,
+body.light-mode .contact-form input,
+body.light-mode .contact-form textarea {
+  background: rgba(255,255,255,0.88);
+  color: var(--text-main);
+  border-color: rgba(0,0,0,0.08);
+}
+
+body.light-mode .logo-title,
+body.light-mode .nav a.active,
+body.light-mode .nav a:hover,
+body.light-mode .modal-profile h2,
+body.light-mode .slide h3,
+body.light-mode .tab-panel h3,
+body.light-mode h1,
+body.light-mode h2,
+body.light-mode h3,
+body.light-mode h4 {
+  color: var(--text-main);
+}
+
+body.light-mode .nav a,
+body.light-mode .hero-text,
+body.light-mode p,
+body.light-mode li,
+body.light-mode .project-content p,
+body.light-mode .product-card p,
+body.light-mode .feature-card p,
+body.light-mode .modal-info p {
+  color: var(--text-soft);
+}
+
+body.light-mode .theme-toggle,
+body.light-mode .menu-toggle,
+body.light-mode .slider-btn {
+  background: rgba(0,0,0,0.04);
+  color: var(--text-main);
+  border-color: rgba(0,0,0,0.10);
+}
+
+body.light-mode .project-card img,
+body.light-mode .product-card img,
+body.light-mode .employee-card img,
+body.light-mode .modal-profile img {
+  filter: none;
+}
+
+@keyframes fadeSlide {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 860px) {
+  .custom-slider {
+    padding: 28px 20px 70px;
+  }
+
+  .slider-btn {
+    top: auto;
+    bottom: 16px;
+    transform: none;
+    width: 42px;
+    height: 42px;
+  }
+
+  .slider-prev { left: 20px; }
+  .slider-next { right: 20px; }
+}
+.stats {
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.stats-container {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.stat-box {
+  background: #111;
+  padding: 30px;
+  border-radius: 15px;
+  width: 200px;
+  box-shadow: 0 0 15px rgba(255,0,0,0.3);
+  transition: 0.3s;
+}
+
+.stat-box:hover {
+  transform: scale(1.05);
+}
+
+.stat-box h2 {
+  color: red;
+  font-size: 36px;
+}
+
+.stat-box p {
+  margin-top: 10px;
+}
