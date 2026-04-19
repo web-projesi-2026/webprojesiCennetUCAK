@@ -1,3 +1,4 @@
+// ÇALIŞAN VERİLERİ
 const employees = {
   1: {
     name: "Mete Hanoğlu",
@@ -6,7 +7,7 @@ const employees = {
     education: "İstanbul Teknik Üniversitesi - Endüstri Mühendisliği",
     experience: "15 yıl",
     expertise: "Kurumsal strateji, yönetim, operasyon planlama",
-    bio: "Şirketin genel yönetiminden sorumlu olan Mete Hanoğlu, teknoloji ve endüstriyel süreç yönetiminde uzun yıllara dayanan tecrübeye sahiptir. Kurumsal büyüme, proje yatırımları ve stratejik iş birliklerini yönetir."
+    bio: "Şirketin genel yönetiminden sorumlu olan Mete Hanoğlu, teknoloji ve endüstriyel süreç yönetiminde uzun yıllara dayanan tecrübeye sahiptir."
   },
   2: {
     name: "Timur Çelik",
@@ -14,124 +15,103 @@ const employees = {
     image: "../assets/images/employees/emp2.png",
     education: "Boğaziçi Üniversitesi - İşletme",
     experience: "12 yıl",
-    expertise: "Yönetim koordinasyonu, süreç geliştirme",
-    bio: "Kurumsal iş akışlarının koordinasyonunu sağlayan Timur Çelik, şirket içi süreçlerin verimli, düzenli ve sürdürülebilir ilerlemesini desteklemektedir."
+    expertise: "Yönetim koordinasyonu",
+    bio: "Kurumsal iş akışlarını yöneten ve organizasyonu sağlayan isimdir."
   },
   3: {
     name: "Pelin Kaya",
     role: "Operasyon Direktörü",
     image: "../assets/images/employees/emp3.png",
-    education: "Yıldız Teknik Üniversitesi - Makine Mühendisliği",
+    education: "Yıldız Teknik Üniversitesi",
     experience: "13 yıl",
-    expertise: "Operasyon yönetimi, saha organizasyonu",
-    bio: "Operasyonel süreçlerin planlanması ve sahadaki uygulamaların yönetilmesinden sorumludur. Verimlilik ve performans odaklı çalışma anlayışıyla projelere yön verir."
+    expertise: "Operasyon yönetimi",
+    bio: "Operasyonel süreçleri yöneten ve sahadaki uygulamaları kontrol eden liderdir."
   },
   4: {
     name: "Mehmet Tokgöz",
-    role: "Yazılım Geliştirme Direktörü",
+    role: "Yazılım Direktörü",
     image: "../assets/images/employees/emp4.png",
-    education: "ODTÜ - Bilgisayar Mühendisliği",
+    education: "ODTÜ",
     experience: "11 yıl",
-    expertise: "Yazılım mimarisi, proje yönetimi, ekip liderliği",
-    bio: "Şirketin yazılım geliştirme ekiplerini yöneten Mehmet Tokgöz, yüksek performanslı ve ölçeklenebilir sistemlerin mimarisini oluşturmaktadır."
+    expertise: "Yazılım mimarisi",
+    bio: "Yazılım ekiplerini yöneten ve sistem mimarisini kuran isimdir."
   },
   5: {
     name: "Serkan Yılmaz",
     role: "Proje Koordinatörü",
-    image: "../assets/images/employees/emp5.png   ",
-    education: "Sakarya Üniversitesi - Yazılım Mühendisliği",
+    image: "../assets/images/employees/emp5.png",
+    education: "Sakarya Üniversitesi",
     experience: "9 yıl",
-    expertise: "Proje planlama, ekip koordinasyonu",
-    bio: "Projelerin zamanında ve hedeflenen kalite standartlarında tamamlanması için ekipler arasında koordinasyon sağlar."
-  },
-  6: {
-    name: "Pınar Karasu",
-    role: "İnsan Kaynakları Müdürü",
-    image: "../assets/images/employees/emp6.png",
-    education: "Marmara Üniversitesi - İnsan Kaynakları Yönetimi",
-    experience: "10 yıl",
-    expertise: "İşe alım, kurumsal gelişim, insan yönetimi",
-    bio: "Şirketin insan kaynağı stratejisini oluşturan Pınar Karasu, çalışan deneyimi ve organizasyonel gelişim alanlarında aktif rol üstlenmektedir."
-  },
-  7: {
-    name: "Kıvanç Yaman",
-    role: "Finans Müdürü",
-    image: "../assets/images/employees/emp7.png",
-    education: "Ankara Üniversitesi - Maliye",
-    experience: "14 yıl",
-    expertise: "Bütçe yönetimi, finansal analiz, raporlama",
-    bio: "Finansal süreçleri yöneten Kıvanç Yaman, şirketin bütçe planlaması, mali analizleri ve sürdürülebilir finansal yapısının korunmasından sorumludur."
-  },
-  8: {
-    name: "Kenan Yaman",
-    role: "Satış ve Pazarlama Müdürü",
-    image: "../assets/images/employees/emp8.png",
-    education: "Ege Üniversitesi - Pazarlama",
-    experience: "8 yıl",
-    expertise: "Kurumsal satış, marka yönetimi, müşteri ilişkileri",
-    bio: "Kurumsal müşteri ilişkileri ve marka konumlandırması alanında çalışan Kenan Yaman, şirket ürün ve hizmetlerinin pazardaki gücünü artırmayı hedefler."
-  },
-  9: {
-    name: "Mustafa Demir",
-    role: "Teknik Destek Müdürü",
-    image: "../assets/images/employees/emp9.png",
-    education: "Karadeniz Teknik Üniversitesi - Bilgisayar Teknolojisi",
-    experience: "10 yıl",
-    expertise: "Teknik servis, sistem bakımı, kullanıcı desteği",
-    bio: "Teknik destek operasyonlarını yöneten Mustafa Demir, müşterilere hızlı çözüm, bakım planlaması ve sistem sürekliliği konularında hizmet verir."
-  },
-  10: {
-    name: "Işıl Hanoğlu",
-    role: "Kurumsal İletişim Sorumlusu",
-    image: "../assets/images/employees/emp10.png",
-    education: "İstanbul Üniversitesi - İletişim Fakültesi",
-    experience: "7 yıl",
-    expertise: "Kurumsal iletişim, medya ilişkileri, organizasyon yönetimi",
-    bio: "Şirketin iç ve dış iletişim süreçlerini yürüten Işıl Hanoğlu, marka dili, kurumsal görünürlük ve profesyonel iletişim stratejilerinde görev alır."
+    expertise: "Proje yönetimi",
+    bio: "Projelerin zamanında tamamlanmasını sağlar."
   }
 };
 
+// ELEMENTLER
 const employeeCards = document.querySelectorAll(".employee-card");
 const employeeModal = document.getElementById("employeeModal");
-const modalBody = document.getElementById("modalBody");
+
+// 🔥 BURADA İSMİ DEĞİŞTİRDİK (HATA BURADAYDI)
+const employeeModalBody = document.getElementById("modalBody");
+
 const modalClose = document.getElementById("modalClose");
 const modalOverlay = document.getElementById("modalOverlay");
 
-if (employeeCards.length && employeeModal && modalBody && modalClose && modalOverlay) {
-  employeeCards.forEach(card => {
-    card.addEventListener("click", () => {
-      const id = card.getAttribute("data-id");
-      const employee = employees[id];
+// MODAL AÇ
+function openEmployeeModal(employee) {
+  if (!employeeModal || !employeeModalBody) return;
 
-      if (employee) {
-        modalBody.innerHTML = `
-          <div class="modal-profile">
-            <img src="${employee.image}" alt="${employee.name}">
-            <div class="modal-info">
-              <h2>${employee.name}</h2>
-              <p class="modal-role">${employee.role}</p>
-              <p><strong>Eğitim:</strong> ${employee.education}</p>
-              <p><strong>Deneyim:</strong> ${employee.experience}</p>
-              <p><strong>Uzmanlık:</strong> ${employee.expertise}</p>
-              <p><strong>Özgeçmiş:</strong> ${employee.bio}</p>
-            </div>
-          </div>
-        `;
-        employeeModal.classList.add("active");
-      }
-    });
-  });
+  employeeModalBody.innerHTML = `
+    <div style="display:flex; gap:20px; align-items:center;">
+      <img src="${employee.image}" style="width:120px; border-radius:10px;">
+      <div>
+        <h2>${employee.name}</h2>
+        <p><strong>${employee.role}</strong></p>
+        <p><b>Eğitim:</b> ${employee.education}</p>
+        <p><b>Deneyim:</b> ${employee.experience}</p>
+        <p><b>Uzmanlık:</b> ${employee.expertise}</p>
+        <p>${employee.bio}</p>
+      </div>
+    </div>
+  `;
 
-  const closeModal = () => {
-    employeeModal.classList.remove("active");
-  };
+  employeeModal.classList.add("active");
+  document.body.style.overflow = "hidden";
+}
 
-  modalClose.addEventListener("click", closeModal);
-  modalOverlay.addEventListener("click", closeModal);
+// MODAL KAPAT
+function closeEmployeeModal() {
+  if (!employeeModal) return;
 
-  document.addEventListener("keydown", (e) => {
-    if (e.key === "Escape") {
-      closeModal();
+  employeeModal.classList.remove("active");
+  document.body.style.overflow = "";
+}
+
+// KARTA TIKLAMA
+employeeCards.forEach(card => {
+  card.addEventListener("click", () => {
+    const id = card.getAttribute("data-id");
+    const employee = employees[id];
+
+    if (employee) {
+      openEmployeeModal(employee);
     }
   });
+});
+
+// KAPATMA BUTONU
+if (modalClose) {
+  modalClose.addEventListener("click", closeEmployeeModal);
 }
+
+// ARKA PLAN TIKLAMA
+if (modalOverlay) {
+  modalOverlay.addEventListener("click", closeEmployeeModal);
+}
+
+// ESC TUŞU
+document.addEventListener("keydown", (e) => {
+  if (e.key === "Escape") {
+    closeEmployeeModal();
+  }
+});
