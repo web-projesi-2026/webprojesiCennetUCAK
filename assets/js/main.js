@@ -262,3 +262,11 @@ if (form) {
     form.reset();
   });
 }
+formMessage.style.color = "white";
+formMessage.textContent = "Gönderiliyor...";
+
+setTimeout(() => {
+  formMessage.style.color = "lime";
+  formMessage.textContent = "Formunuz başarıyla gönderildi!";
+  form.reset();
+}, 1000);
