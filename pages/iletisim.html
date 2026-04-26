@@ -106,36 +106,17 @@
 
   <script src="../assets/js/main.js"></script>
 
-  <script>
-    const form = document.getElementById("contactForm");
-    const formMessage = document.getElementById("formMessage");
+<script>
+const form = document.getElementById("contactForm");
+const formMessage = document.getElementById("formMessage");
 
-    form.addEventListener("submit", function(e) {
-      e.preventDefault();
+form.addEventListener("submit", function(e){
 
-      const name = document.getElementById("name").value.trim();
-      const email = document.getElementById("email").value.trim();
-      const subject = document.getElementById("subject").value.trim();
-      const message = document.getElementById("message").value.trim();
+  formMessage.style.color = "white";
+  formMessage.textContent = "Gönderiliyor...";
 
-      if (!name || !email || !subject || !message) {
-        formMessage.style.color = "red";
-        formMessage.textContent = "Lütfen tüm alanları doldurun!";
-        return;
-      }
-
-      if (!email.includes("@") || !email.includes(".")) {
-        formMessage.style.color = "red";
-        formMessage.textContent = "Geçerli bir e-posta giriniz!";
-        return;
-      }
-
-      formMessage.style.color = "lime";
-      formMessage.textContent = "Formunuz başarıyla gönderildi!";
-
-      form.reset();
-    });
-  </script>
+});
+</script>
 
 </body>
 </html>
