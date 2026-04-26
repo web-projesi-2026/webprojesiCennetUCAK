@@ -229,3 +229,36 @@ if (tabButtons.length > 0 && tabContents.length > 0) {
     });
   });
 }
+// FORM KONTROL
+const form = document.getElementById("contactForm");
+const formMessage = document.getElementById("formMessage");
+
+if (form) {
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    const name = document.getElementById("name").value.trim();
+    const email = document.getElementById("email").value.trim();
+    const phone = document.getElementById("phone").value.trim();
+    const service = document.getElementById("service").value;
+    const message = document.getElementById("message").value.trim();
+    const kvkk = document.getElementById("kvkk").checked;
+
+    if (!name || !email || !phone || !service || !message || !kvkk) {
+      formMessage.style.color = "red";
+      formMessage.textContent = "Lütfen tüm alanları doldurun!";
+      return;
+    }
+
+    if (!email.includes("@")) {
+      formMessage.style.color = "red";
+      formMessage.textContent = "Geçerli bir e-posta giriniz!";
+      return;
+    }
+
+    formMessage.style.color = "lime";
+    formMessage.textContent = "Form başarıyla gönderildi!";
+    
+    form.reset();
+  });
+}
