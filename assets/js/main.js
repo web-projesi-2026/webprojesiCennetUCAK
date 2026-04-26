@@ -230,43 +230,39 @@ if (tabButtons.length > 0 && tabContents.length > 0) {
   });
 }
 // FORM KONTROL
+// FORM KONTROL
 const form = document.getElementById("contactForm");
 const formMessage = document.getElementById("formMessage");
 
-if (form) {
+if (form && formMessage) {
   form.addEventListener("submit", function (e) {
     e.preventDefault();
 
     const name = document.getElementById("name").value.trim();
     const email = document.getElementById("email").value.trim();
-    const phone = document.getElementById("phone").value.trim();
-    const service = document.getElementById("service").value;
+    const subject = document.getElementById("subject").value.trim();
     const message = document.getElementById("message").value.trim();
-    const kvkk = document.getElementById("kvkk").checked;
 
-    if (!name || !email || !phone || !service || !message || !kvkk) {
+    if (!name || !email || !subject || !message) {
       formMessage.style.color = "red";
       formMessage.textContent = "Lütfen tüm alanları doldurun!";
       return;
     }
 
-    if (!email.includes("@")) {
+    if (!email.includes("@") || !email.includes(".")) {
       formMessage.style.color = "red";
       formMessage.textContent = "Geçerli bir e-posta giriniz!";
       return;
     }
 
-    formMessage.style.color = "lime";
-    formMessage.textContent = "Form başarıyla gönderildi!";
-    
-    form.reset();
+    // LOADING
+    formMessage.style.color = "white";
+    formMessage.textContent = "Gönderiliyor...";
+
+    setTimeout(() => {
+      formMessage.style.color = "lime";
+      formMessage.textContent = "Formunuz başarıyla gönderildi!";
+      form.reset();
+    }, 1000);
   });
 }
-formMessage.style.color = "white";
-formMessage.textContent = "Gönderiliyor...";
-
-setTimeout(() => {
-  formMessage.style.color = "lime";
-  formMessage.textContent = "Formunuz başarıyla gönderildi!";
-  form.reset();
-}, 1000);
