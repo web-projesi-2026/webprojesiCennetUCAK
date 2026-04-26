@@ -60,22 +60,23 @@
         <div class="card content-card">
           <h2>İletişim Formu</h2>
 
-         <form id="contactForm" class="contact-form" onsubmit="return false;">
+        <form id="contactForm" class="contact-form" action="../form.php" method="post">
 
-            <input type="text" id="name" placeholder="Ad Soyad" required>
+<input type="text" name="name" id="name" placeholder="Ad Soyad" required>
 
-            <input type="email" id="email" placeholder="E-posta" required>
+<input type="email" name="email" id="email" placeholder="E-posta" required>
 
-            <input type="text" id="subject" placeholder="Konu" required>
+<input type="text" name="subject" id="subject" placeholder="Konu" required>
 
-            <textarea id="message" rows="6" placeholder="Mesajınız" required></textarea>
+<textarea name="message" id="message" rows="6" placeholder="Mesajınız" required></textarea>
 
-            <button type="submit" class="btn btn-primary">Gönder</button>
+<button type="submit" class="btn btn-primary">Gönder</button>
 
+<p id="formMessage"></p>
+
+</form>
          
-            <p id="formMessage"></p>
-
-          </form>
+           
         </div>
 
       </div>
