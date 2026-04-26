@@ -49,6 +49,7 @@
 
     <section class="section">
       <div class="container contact-grid">
+
         <div class="card content-card">
           <h2>İletişim Bilgileri</h2>
           <p><strong>E-posta:</strong> info@ucakyazilim.com</p>
@@ -58,14 +59,25 @@
 
         <div class="card content-card">
           <h2>İletişim Formu</h2>
-          <form class="contact-form" action="#" method="post">
-            <input type="text" name="adsoyad" placeholder="Ad Soyad" required>
-            <input type="email" name="email" placeholder="E-posta" required>
-            <input type="text" name="konu" placeholder="Konu" required>
-            <textarea name="mesaj" rows="6" placeholder="Mesajınız" required></textarea>
+
+          <form id="contactForm" class="contact-form">
+
+            <input type="text" id="name" placeholder="Ad Soyad" required>
+
+            <input type="email" id="email" placeholder="E-posta" required>
+
+            <input type="text" id="subject" placeholder="Konu" required>
+
+            <textarea id="message" rows="6" placeholder="Mesajınız" required></textarea>
+
             <button type="submit" class="btn btn-primary">Gönder</button>
+
+         
+            <p id="formMessage"></p>
+
           </form>
         </div>
+
       </div>
     </section>
   </main>
@@ -93,5 +105,37 @@
   </footer>
 
   <script src="../assets/js/main.js"></script>
+
+  <script>
+    const form = document.getElementById("contactForm");
+    const formMessage = document.getElementById("formMessage");
+
+    form.addEventListener("submit", function(e) {
+      e.preventDefault();
+
+      const name = document.getElementById("name").value.trim();
+      const email = document.getElementById("email").value.trim();
+      const subject = document.getElementById("subject").value.trim();
+      const message = document.getElementById("message").value.trim();
+
+      if (!name || !email || !subject || !message) {
+        formMessage.style.color = "red";
+        formMessage.textContent = "Lütfen tüm alanları doldurun!";
+        return;
+      }
+
+      if (!email.includes("@") || !email.includes(".")) {
+        formMessage.style.color = "red";
+        formMessage.textContent = "Geçerli bir e-posta giriniz!";
+        return;
+      }
+
+      formMessage.style.color = "lime";
+      formMessage.textContent = "Formunuz başarıyla gönderildi!";
+
+      form.reset();
+    });
+  </script>
+
 </body>
 </html>
