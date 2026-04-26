@@ -255,4 +255,13 @@ if (form && formMessage) {
       return;
     }
 
-   
+    formMessage.innerHTML = `
+      <div class="success-message">
+        <span class="checkmark">✔</span>
+        <span>Formunuz başarıyla gönderildi!</span>
+      </div>
+    `;
+
+    form.reset();
+  });
+}
