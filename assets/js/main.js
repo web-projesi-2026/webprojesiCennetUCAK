@@ -255,10 +255,4 @@ if (form && formMessage) {
       return;
     }
 
-    // ✅ SADECE BAŞARI MESAJI
-    formMessage.style.color = "lime";
-    formMessage.textContent = "Formunuz başarıyla gönderildi!";
-
-    form.reset();
-  });
-}
+   
