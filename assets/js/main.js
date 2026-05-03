@@ -265,3 +265,36 @@ if (form && formMessage) {
     form.reset();
   });
 }
+const servicesContainer = document.getElementById("servicesContainer");
+
+let favorites = JSON.parse(localStorage.getItem("favorites")) || [];
+
+fetch("assets/data/services.json")
+  .then(response => response.json())
+  .then(services => {
+    services.forEach(service => {
+      const isFavorite = favorites.includes(service.id);
+
+      servicesContainer.innerHTML += `
+        <div class="service-card">
+          <h3>${service.title}</h3>
+          <p>${service.description}</p>
+          <span>${service.price}</span>
+          <button onclick="toggleFavorite(${service.id})">
+            ${isFavorite ? "Favoriden Çıkar" : "Favoriye Ekle"}
+          </button>
+        </div>
+      `;
+    });
+  });
+
+function toggleFavorite(id) {
+  if (favorites.includes(id)) {
+    favorites = favorites.filter(item => item !== id);
+  } else {
+    favorites.push(id);
+  }
+
+  localStorage.setItem("favorites", JSON.stringify(favorites));
+  location.reload();
+}
