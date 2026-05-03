@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <title>Tekliflerim</title>
+  <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+
+<h2>Tekliflerim</h2>
+
+<div id="tekliflerContainer" class="services-container"></div>
+
+<script src="../assets/js/teklifler.js"></script>
+
+</body>
+</html>
