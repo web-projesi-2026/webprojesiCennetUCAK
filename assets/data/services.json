@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "title": "Endüstriyel Otomasyon",
+    "description": "Fabrika süreçleri için yazılım ve otomasyon çözümleri.",
+    "price": "₺15.000"
+  },
+  {
+    "id": 2,
+    "title": "Kurumsal Web Sitesi",
+    "description": "İşletmeler için modern ve hızlı web sitesi geliştirme.",
+    "price": "₺8.000"
+  },
+  {
+    "id": 3,
+    "title": "Stok Takip Sistemi",
+    "description": "Ürün, depo ve stok hareketlerini takip eden sistem.",
+    "price": "₺12.000"
+  }
+]
