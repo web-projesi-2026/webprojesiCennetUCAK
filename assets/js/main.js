@@ -267,34 +267,33 @@ if (form && formMessage) {
 }
 const servicesContainer = document.getElementById("servicesContainer");
 
-let favorites = JSON.parse(localStorage.getItem("favorites")) || [];
+let tekliflerim = JSON.parse(localStorage.getItem("tekliflerim")) || [];
 
+// JSON'dan veri çek
 fetch("assets/data/services.json")
-  .then(response => response.json())
-  .then(services => {
-    services.forEach(service => {
-      const isFavorite = favorites.includes(service.id);
-
+  .then(res => res.json())
+  .then(data => {
+    data.forEach(service => {
       servicesContainer.innerHTML += `
         <div class="service-card">
           <h3>${service.title}</h3>
           <p>${service.description}</p>
           <span>${service.price}</span>
-          <button onclick="toggleFavorite(${service.id})">
-            ${isFavorite ? "Favoriden Çıkar" : "Favoriye Ekle"}
+          <button onclick="teklifeEkle(${service.id})">
+            Teklif Al
           </button>
         </div>
       `;
     });
   });
 
-function toggleFavorite(id) {
-  if (favorites.includes(id)) {
-    favorites = favorites.filter(item => item !== id);
+// Teklif ekleme
+function teklifeEkle(id) {
+  if (!tekliflerim.includes(id)) {
+    tekliflerim.push(id);
+    localStorage.setItem("tekliflerim", JSON.stringify(tekliflerim));
+    alert("Teklif listesine eklendi");
   } else {
-    favorites.push(id);
+    alert("Zaten ekli");
   }
-
-  localStorage.setItem("favorites", JSON.stringify(favorites));
-  location.reload();
 }
