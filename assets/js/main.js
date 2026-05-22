@@ -269,6 +269,39 @@ const servicesContainer = document.getElementById("servicesContainer");
 
 let tekliflerim = JSON.parse(localStorage.getItem("tekliflerim")) || [];
 
+if (servicesContainer) {
+  fetch("assets/data/services.json")
+    .then(res => res.json())
+    .then(data => {
+      data.forEach(service => {
+        servicesContainer.innerHTML += `
+          <div class="service-card">
+            <h3>${service.title}</h3>
+            <p>${service.description}</p>
+            <span>${service.price}</span>
+            <button onclick="teklifeEkle(${service.id})">
+              Teklif Al
+            </button>
+          </div>
+        `;
+      });
+    })
+    .catch(error => {
+      console.log("Services JSON hatası:", error);
+    });
+}
+
+function teklifeEkle(id) {
+  if (!tekliflerim.includes(id)) {
+    tekliflerim.push(id);
+    localStorage.setItem("tekliflerim", JSON.stringify(tekliflerim));
+    alert("Teklif listesine eklendi");
+  } else {
+    alert("Zaten ekli");
+  }
+}
+let tekliflerim = JSON.parse(localStorage.getItem("tekliflerim")) || [];
+
 // JSON'dan veri çek
 fetch("assets/data/services.json")
   .then(res => res.json())
