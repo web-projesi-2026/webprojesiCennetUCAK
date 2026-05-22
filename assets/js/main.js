@@ -266,29 +266,102 @@ if (form && formMessage) {
   });
 }
 const servicesContainer = document.getElementById("servicesContainer");
+const serviceSearch = document.getElementById("serviceSearch");
+const serviceCategory = document.getElementById("serviceCategory");
+const serviceSort = document.getElementById("serviceSort");
 
+let servicesData = [];
 let tekliflerim = JSON.parse(localStorage.getItem("tekliflerim")) || [];
 
+function getDataPath() {
+  if (window.location.pathname.includes("/pages/")) {
+    return "../assets/data/services.json";
+  }
+  return "assets/data/services.json";
+}
+
 if (servicesContainer) {
-  fetch("assets/data/services.json")
+  fetch(getDataPath())
     .then(res => res.json())
     .then(data => {
-      data.forEach(service => {
-        servicesContainer.innerHTML += `
-          <div class="service-card">
-            <h3>${service.title}</h3>
-            <p>${service.description}</p>
-            <span>${service.price}</span>
-            <button onclick="teklifeEkle(${service.id})">
-              Teklif Al
-            </button>
-          </div>
-        `;
-      });
+      servicesData = data;
+      renderServices(servicesData);
+
+      if (serviceSearch) serviceSearch.addEventListener("input", filterServices);
+      if (serviceCategory) serviceCategory.addEventListener("change", filterServices);
+      if (serviceSort) serviceSort.addEventListener("change", filterServices);
     })
     .catch(error => {
       console.log("Services JSON hatası:", error);
     });
+}
+
+function renderServices(data) {
+  servicesContainer.innerHTML = "";
+
+  if (data.length === 0) {
+    servicesContainer.innerHTML = `<p class="empty-message">Sonuç bulunamadı.</p>`;
+    return;
+  }
+
+  data.forEach(service => {
+    servicesContainer.innerHTML += `
+      <div class="service-card card">
+        <span class="category-label">${service.category}</span>
+        <h3>${service.title}</h3>
+        <p>${service.description}</p>
+        <div class="service-bottom">
+          <strong>${service.price} TL</strong>
+          <button onclick="teklifeEkle(${service.id})">Teklif Al</button>
+        </div>
+      </div>
+    `;
+  });
+}
+
+function filterServices() {
+  let filtered = [...servicesData];
+
+  const searchValue = serviceSearch ? serviceSearch.value.toLowerCase() : "";
+  const categoryValue = serviceCategory ? serviceCategory.value : "all";
+  const sortValue = serviceSort ? serviceSort.value : "default";
+
+  filtered = filtered.filter(service =>
+    service.title.toLowerCase().includes(searchValue) ||
+    service.description.toLowerCase().includes(searchValue)
+  );
+
+  if (categoryValue !== "all") {
+    filtered = filtered.filter(service => service.category === categoryValue);
+  }
+
+  if (sortValue === "az") {
+    filtered.sort((a, b) => a.title.localeCompare(b.title));
+  }
+
+  if (sortValue === "za") {
+    filtered.sort((a, b) => b.title.localeCompare(a.title));
+  }
+
+  if (sortValue === "low") {
+    filtered.sort((a, b) => a.price - b.price);
+  }
+
+  if (sortValue === "high") {
+    filtered.sort((a, b) => b.price - a.price);
+  }
+
+  renderServices(filtered);
+}
+
+function teklifeEkle(id) {
+  if (!tekliflerim.includes(id)) {
+    tekliflerim.push(id);
+    localStorage.setItem("tekliflerim", JSON.stringify(tekliflerim));
+    alert("Hizmet teklif listesine eklendi.");
+  } else {
+    alert("Bu hizmet zaten teklif listesinde.");
+  }
 }
 
 function teklifeEkle(id) {
