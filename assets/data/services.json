@@ -1,20 +1,44 @@
 [
   {
     "id": 1,
-    "title": "Endüstriyel Otomasyon",
-    "description": "Fabrika süreçleri için yazılım ve otomasyon çözümleri.",
-    "price": "₺15.000"
+    "title": "Özel Yazılım Çözümleri",
+    "category": "Yazılım",
+    "price": 15000,
+    "description": "İşletmeye özel web, masaüstü ve mobil yazılım çözümleri geliştiriyoruz."
   },
   {
     "id": 2,
-    "title": "Kurumsal Web Sitesi",
-    "description": "İşletmeler için modern ve hızlı web sitesi geliştirme.",
-    "price": "₺8.000"
+    "title": "Endüstriyel Otomasyon Sistemi",
+    "category": "Otomasyon",
+    "price": 22000,
+    "description": "Üretim ve operasyon süreçlerini dijitalleştiren otomasyon altyapıları sunuyoruz."
   },
   {
     "id": 3,
-    "title": "Stok Takip Sistemi",
-    "description": "Ürün, depo ve stok hareketlerini takip eden sistem.",
-    "price": "₺12.000"
+    "title": "Kurumsal Teknoloji Danışmanlığı",
+    "category": "Danışmanlık",
+    "price": 9000,
+    "description": "Şirketlerin dijital dönüşüm süreçlerinde teknik danışmanlık desteği sağlıyoruz."
+  },
+  {
+    "id": 4,
+    "title": "Veri Raporlama Paneli",
+    "category": "Raporlama",
+    "price": 12000,
+    "description": "Kurumsal verilerinizi anlamlı raporlara dönüştüren kontrol panelleri hazırlıyoruz."
+  },
+  {
+    "id": 5,
+    "title": "Bakım ve Teknik Destek",
+    "category": "Danışmanlık",
+    "price": 7000,
+    "description": "Sistemlerin sürekliliği için bakım, izleme ve teknik destek hizmetleri sunuyoruz."
+  },
+  {
+    "id": 6,
+    "title": "Kurumsal Web Platformu",
+    "category": "Yazılım",
+    "price": 18000,
+    "description": "Firmalar için modern, responsive ve yönetilebilir web platformları geliştiriyoruz."
   }
 ]
