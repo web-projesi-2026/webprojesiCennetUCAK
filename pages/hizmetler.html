@@ -31,6 +31,7 @@
         <a href="projeler.html">Projeler</a>
         <a href="urunler.html">Ürünler</a>
         <a href="hizmetler.html" class="active">Hizmetler</a>
+        <a href="tekliflerim.html">Tekliflerim</a>
         <a href="iletisim.html">İletişim</a>
       </nav>
 
@@ -43,28 +44,46 @@
       <div class="container">
         <p class="eyebrow">Kurumsal Destek</p>
         <h1>Hizmetler</h1>
-        <p>İşletmeniz için uçtan uca yazılım, entegrasyon ve teknik danışmanlık hizmetleri.</p>
+        <p>
+          İşletmeniz için uçtan uca yazılım, entegrasyon ve teknik danışmanlık hizmetleri.
+        </p>
       </div>
     </section>
 
     <section class="section">
-      <div class="container feature-grid">
-        <div class="feature-card card">
-          <h3>Özel Yazılım Çözümleri</h3>
-          <p>İşletmeye özel masaüstü, web ve mobil sistemler geliştiriyoruz.</p>
+      <div class="container">
+
+        <div class="section-head">
+          <p class="eyebrow">Dinamik Hizmet Listesi</p>
+          <h2>Hizmetleri Ara, Filtrele ve Sırala</h2>
+          <p>
+            Hizmet kartları JSON dosyasından dinamik olarak çekilir. Kullanıcı arama,
+            kategori filtreleme ve fiyat sıralama işlemlerini yapabilir.
+          </p>
         </div>
-        <div class="feature-card card">
-          <h3>Sistem Entegrasyonu</h3>
-          <p>Farklı kurumsal uygulamaları tek altyapıda birleştiriyoruz.</p>
+
+        <div class="filter-panel card">
+          <input type="text" id="serviceSearch" placeholder="Hizmet ara..." />
+
+          <select id="serviceCategory">
+            <option value="all">Tüm Kategoriler</option>
+            <option value="Yazılım">Yazılım</option>
+            <option value="Otomasyon">Otomasyon</option>
+            <option value="Danışmanlık">Danışmanlık</option>
+            <option value="Raporlama">Raporlama</option>
+          </select>
+
+          <select id="serviceSort">
+            <option value="default">Varsayılan Sıralama</option>
+            <option value="az">İsme Göre A-Z</option>
+            <option value="za">İsme Göre Z-A</option>
+            <option value="low">Fiyat Artan</option>
+            <option value="high">Fiyat Azalan</option>
+          </select>
         </div>
-        <div class="feature-card card">
-          <h3>Veri Raporlama</h3>
-          <p>Karar süreçlerini güçlendiren anlamlı raporlar ve kontrol panelleri sunuyoruz.</p>
-        </div>
-        <div class="feature-card card">
-          <h3>Bakım ve Destek</h3>
-          <p>Sistemlerinizin sürekliliği için düzenli teknik bakım ve destek sağlıyoruz.</p>
-        </div>
+
+        <div id="servicesContainer" class="services-container"></div>
+
       </div>
     </section>
   </main>
@@ -75,14 +94,17 @@
         <h3>Uçak Yazılım Endüstrileri</h3>
         <p>Yenilikçi yazılım, endüstriyel otomasyon ve kurumsal teknoloji çözümleri.</p>
       </div>
+
       <div>
         <h4>Hızlı Menü</h4>
         <ul>
           <li><a href="hakkinda.html">Hakkında</a></li>
           <li><a href="urunler.html">Ürünler</a></li>
+          <li><a href="tekliflerim.html">Tekliflerim</a></li>
           <li><a href="iletisim.html">İletişim</a></li>
         </ul>
       </div>
+
       <div>
         <h4>İletişim</h4>
         <p>info@ucakyazilim.com</p>
@@ -90,6 +112,8 @@
       </div>
     </div>
   </footer>
+
+  <button id="topBtn" class="top-btn" aria-label="Yukarı çık">↑</button>
 
   <script src="../assets/js/main.js"></script>
 </body>
